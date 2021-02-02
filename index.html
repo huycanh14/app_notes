@@ -13,20 +13,19 @@
 	<header>
 		<div class="content" id="content">
 			<div class="intention">
-				
-			<button class="btn btn-success content--action-push" id="button--drop-menu">Push</button>
+			<i class="fas fa-2x fa-align-justify content--action-push" id="button--drop-menu" title="Click để hiện menu"></i>
+			<p>noi dung</p>
 			</div>
 		</div>
 		<div class="row" style="margin:0; padding:0; "><!-- 
 		<button class="btn btn-success content--action-push">Push</button> -->
 			<div id="menu-toggle" class="col-2 return-left">
 				<ul>
-					<li>Trang chu</li>
-					<li>Them note</li>
-					<li>Sua note</li>
-					<li>Sua note</li>
-					<li>Xoa note</li>
+					<li><img src="images/icon_note.png" alt="icon note" style="width: 50%;"></li>
+					<li class="active" onclick="actionChangeColor(this);"><a href="#" class="fas fa-list-ol list-action"> Danh sách</a></li>
+					<li class="" onclick="actionChangeColor(this);"><a class="fas fa-plus-square list-action"> Them note</a></li>
 				</ul>
+
 			</div>
 			<div class="background--gray"></div>
 		</div>

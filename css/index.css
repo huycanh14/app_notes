@@ -8,18 +8,37 @@ html, body {
   overflow-x: hidden; }
 
 #menu-toggle {
-  background-color: blue;
+  background-color: #48a770;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2; }
+  z-index: 2;
+  padding: 0; }
   #menu-toggle.return-left {
     transform: translateX(-100%);
-    transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.4s; }
+    transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.5s; }
   #menu-toggle.return-right {
     transform: translateX(0%);
-    transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.4s; }
+    transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.5s; }
+  #menu-toggle ul {
+    padding: 0; }
+    #menu-toggle ul li {
+      list-style: none;
+      padding: 1em 1em 1em 1.2em;
+      outline: none;
+      border-bottom: 1px solid; }
+      #menu-toggle ul li:hover:nth-child(n+2) {
+        background-color: #388a5a;
+        cursor: pointer; }
+      #menu-toggle ul li a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase; }
+      #menu-toggle ul li.active {
+        background-color: #388a5a; }
 
 .background--gray {
   position: fixed;
@@ -34,11 +53,13 @@ html, body {
   visibility: hidden; }
 
 .content--action-push {
-  margin-left: auto;
-  margin-right: auto;
+  /* 	margin-left: auto;
+  	margin-right: auto;
+  	width: 100px;
+  */
   display: block;
   z-index: 3;
-  width: 100px; }
+  cursor: pointer; }
 
 .show-background--gray {
   opacity: 1;
@@ -49,12 +70,14 @@ html, body {
   transform: translateX(0%); }
 
 #content {
-  transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.4s;
+  transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.5s;
   width: 100%;
   height: 100%; }
   #content.content--transform {
-    perspective: 300em;
-    /**rotateY(-15deg)*/ }
+    /**rotateY(-15deg)
+    transform-origin: 100% 0%;
+    */
+    perspective: 300em; }
   #content .intention {
     width: 100%;
     height: 100%;
@@ -65,7 +88,7 @@ html, body {
 
 header {
   height: 100%;
-  transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.4s;
+  transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.5s;
   box-sizing: border-box; }
 
 /*# sourceMappingURL=index.css.map */
