@@ -11,7 +11,9 @@ var btnDropMenu = $("#button--drop-menu"),
 	backgroundGray = $(".background--gray").first(),
 	intention = $(".intention").first(),
 	actionList = $(".list-action"),
-	listAction = $("#menu-toggle>ul>li");
+	listAction = $("#menu-toggle>ul>li"),
+	htmlListNotes = $("#list-notes>.row"),
+	listNotes = [];
 
 // declare constant
 
@@ -24,8 +26,7 @@ const TRANSFROM_INTENTION = "intention--transform";
 
 
 $(function () {
-	getList();
-	addNote();
+	displayListNotes();
 	btnDropMenu.click(function(event) {
 		displayMenu();
 	});
@@ -43,10 +44,11 @@ $(function () {
 			break;
 		}
 	});
-	listAction.click(function(e) {
-		console.log(222)
-	})
 })
+
+$( window ).on( "load", function() {
+    listNotes = getList();
+});
 
 window.actionChangeColor = (argument) => {
 	listAction.removeClass('active').filter(argument).toggleClass('active');
@@ -67,4 +69,27 @@ const notDisplayMeny = () => {
 	content.removeClass(OFFSET_RIGHT);
 	intention.removeClass(TRANSFROM_INTENTION);
 	btnDropMenu.removeClass('d-none');
+}
+
+
+const displayListNotes = () => {
+	let str = [];
+	listNotes.forEach((item) => {
+		let code = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
+		str +=
+			`<div class="col-3 pb-5">
+				<div class='content'>
+					<div class='card d-flex align-items-stretch'>
+						<div class='card-body' style="background-color: ${code}"> 
+							<h5 class='card-title'>${item.time}</h5>
+							<small><i>${item.date}</i></small>
+							<p class='card-text'>${item.content}</p>
+						</div> </div>
+					<div class='delete-card'>
+						<i class='fas fa-2x fa-minus-circle'></i>
+					</div>
+				</div>
+			</div>`;
+	});
+	htmlListNotes.html(str);
 }

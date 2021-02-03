@@ -1,8 +1,10 @@
 $backgroundBody: #808080;
 $backgroundGray: #80808070;
+$backgroundList: #41c84bc4;
 $colorWhite: #ffffff;
-$greenMenu : #48a770;
-$greemMenuHover: #388a5a;
+$greenMenu : #a0f2ffad;
+$greemMenuHover: #38828a;
+$colorIconDelete : #dc3545;
 
 *{
 	margin:0;
@@ -98,7 +100,7 @@ html, body {
 		width: 100%;
 		height: 100%;
 		transform-origin: 100% 0%;
-		background-color: $colorWhite;
+		background-color: $backgroundList;
 		&.intention--transform {
 			transform:rotateY(-10deg);
 		}
@@ -109,4 +111,34 @@ header{
 	height: 100%;
 	transition: cubic-bezier(.77,.07,.69,.39) 0.5s;
 	box-sizing: border-box;
+}
+
+#list-notes {
+	.content{
+		position: relative;
+		color: $colorWhite;
+	    width: 100%;
+	    height: 100%; 
+	    -webkit-box-shadow: 0px 0px 68px -15px rgba(255,213,59,1);
+		-moz-box-shadow: 0px 0px 68px -15px rgba(255,213,59,1);
+		box-shadow: 0px 0px 68px -15px rgba(255,213,59,1);
+	    .card {
+	    	cursor: pointer;
+	    	&:hover {
+		    	&~.delete-card{
+	    			opacity: 1;
+	    			visibility: visible;
+	    		}
+	    	}
+	    }
+	    .delete-card {
+	    	position: absolute;
+		    top: -9px;
+    		right: -2%;
+    		color: $colorIconDelete;
+    		cursor: pointer;
+    		opacity: 0;
+    		visibility: hidden;
+	    }
+	}
 }
