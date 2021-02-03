@@ -85,8 +85,14 @@ const displayListNotes = () => {
 							<small><i>${item.date}</i></small>
 							<p class='card-text'>${item.content}</p>
 						</div> </div>
-					<div class='delete-card'>
-						<i class='fas fa-2x fa-minus-circle'></i>
+
+					<div class="delete-card">
+						<div class="pb-5">
+							<i class="fas fa-2x fa-minus-circle"></i>
+						</div>
+						<div >
+							<i class="fas fa-2x fa-pencil-alt"></i>
+						</div>
 					</div>
 				</div>
 			</div>`;

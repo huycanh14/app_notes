@@ -5,6 +5,7 @@ $colorWhite: #ffffff;
 $greenMenu : #a0f2ffad;
 $greemMenuHover: #38828a;
 $colorIconDelete : #dc3545;
+$colorWarning: #ffc107;
 
 *{
 	margin:0;
@@ -128,17 +129,27 @@ header{
 		    	&~.delete-card{
 	    			opacity: 1;
 	    			visibility: visible;
+	    			transform: cubic-bezier(.77,.07,.58,.52) 1s;
 	    		}
 	    	}
 	    }
 	    .delete-card {
 	    	position: absolute;
-		    top: -9px;
-    		right: -2%;
-    		color: $colorIconDelete;
+		    top: 0px;
+    		right: 0%;
     		cursor: pointer;
     		opacity: 0;
     		visibility: hidden;
+    		background-color: #fcf1f1;
+    		height: 100%;
+    		transform: cubic-bezier(.77,.07,.58,.52) 1s;
+    		div:nth-child(1){
+    			color: $colorIconDelete;
+    		}
+    		div:nth-child(2){
+    			color: $colorWarning;
+    		}
+
 	    }
 	}
 }

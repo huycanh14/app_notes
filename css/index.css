@@ -103,14 +103,21 @@ header {
     cursor: pointer; }
     #list-notes .content .card:hover ~ .delete-card {
       opacity: 1;
-      visibility: visible; }
+      visibility: visible;
+      transform: cubic-bezier(0.77, 0.07, 0.58, 0.52) 1s; }
   #list-notes .content .delete-card {
     position: absolute;
-    top: -9px;
-    right: -2%;
-    color: #dc3545;
+    top: 0px;
+    right: 0%;
     cursor: pointer;
     opacity: 0;
-    visibility: hidden; }
+    visibility: hidden;
+    background-color: #fcf1f1;
+    height: 100%;
+    transform: cubic-bezier(0.77, 0.07, 0.58, 0.52) 1s; }
+    #list-notes .content .delete-card div:nth-child(1) {
+      color: #dc3545; }
+    #list-notes .content .delete-card div:nth-child(2) {
+      color: #ffc107; }
 
 /*# sourceMappingURL=index.css.map */
