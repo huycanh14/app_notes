@@ -48,13 +48,34 @@
 				<ul>
 					<li><img src="images/icon_note.png" alt="icon note" style="width: 50%;"></li>
 					<li class="active" data-action="get-list" onclick="actionChangeColor(this);"><a href="#" class="fas fa-list-ol list-action"> Danh sách</a></li>
-					<li class="" data-action="add-note" onclick="actionChangeColor(this);"><a class="fas fa-plus-square list-action"> Them note</a></li>
+					<li class="" data-action="add-note" onclick="actionChangeColor(this);"><a href="#add-appoinment" class="fas fa-plus-square list-action"> Them note</a></li>
 				</ul>
 
 			</div>
 			<div class="background--gray"></div>
 		</div>
 	</header>
+	<div class="container" id="add-appoinment">
+		<div class="row">
+			<div class="col-8 col-md-6 offset-2 offset-md-3">
+				<form>
+					<div class="form-group">
+						<label for="timeForAppointment">Thời gian</label>
+						<input type="time" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="dateForAppointment">Ngày hẹn</label>
+						<input type="date" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="contentForAppointment">Nội dung cuộc hẹn</label>
+						<input type="text" class="form-control" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
 	
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/popper.min.js"></script>

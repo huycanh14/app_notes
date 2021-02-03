@@ -105,9 +105,10 @@ const displayListNotes = () => {
 
 window.deleteNote = (index) => {
 	alertify.confirm("Chắc chắn muốn xóa ghi chú này?", function (e) {
-    if (e) {
-        listNotes = removeNote(index);
-        displayListNotes();
-    }
-});
+	    if (e) {
+	        listNotes = removeNote(index);
+	        displayListNotes();
+	        alertify.success("Xóa thành công");
+	    }
+	});
 }
