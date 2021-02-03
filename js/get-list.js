@@ -1,6 +1,6 @@
 // Cach 1: export module
 
-const valueDemoToday = [
+var valueDemoToday = [
 	{
 		time: "10:30",
 		date : "04-02-2020",
@@ -29,6 +29,11 @@ const valueDemoToday = [
 ];
 
 var getList = () => {
+	return [...valueDemoToday];
+}
+
+export const removeNote = (index) => {
+	valueDemoToday = valueDemoToday.filter((item, i) => i !== index)
 	return [...valueDemoToday];
 }
 

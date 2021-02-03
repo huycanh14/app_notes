@@ -1,5 +1,6 @@
 // Import module
 import getList from "./get-list.js" // cach 1
+import { removeNote } from "./get-list.js" // cach 1
 
 import { addNote } from "./add-note.js" // cach 2
 
@@ -39,6 +40,8 @@ $(function () {
 		let action = $(this).data('action');
 		switch(action) {
 			case "get-list":
+				getList();
+				displayListNotes();
 			break;
 			case "add-note":
 			break;
@@ -74,7 +77,7 @@ const notDisplayMeny = () => {
 
 const displayListNotes = () => {
 	let str = [];
-	listNotes.forEach((item) => {
+	listNotes.forEach((item, index) => {
 		let code = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
 		str +=
 			`<div class="col-3 pb-5">
@@ -88,7 +91,7 @@ const displayListNotes = () => {
 
 					<div class="delete-card">
 						<div class="pb-5">
-							<i class="fas fa-2x fa-minus-circle"></i>
+							<i class="fas fa-2x fa-minus-circle" onclick="deleteNote(${index})"></i>
 						</div>
 						<div >
 							<i class="fas fa-2x fa-pencil-alt"></i>
@@ -98,4 +101,13 @@ const displayListNotes = () => {
 			</div>`;
 	});
 	htmlListNotes.html(str);
+}
+
+window.deleteNote = (index) => {
+	alertify.confirm("Chắc chắn muốn xóa ghi chú này?", function (e) {
+    if (e) {
+        listNotes = removeNote(index);
+        displayListNotes();
+    }
+});
 }
