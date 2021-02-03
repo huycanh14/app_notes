@@ -1,3 +1,8 @@
+// Import module
+import getList from "./get-list.js" // cach 1
+
+import { addNote } from "./add-note.js" // cach 2
+
 // declare variable
 
 var btnDropMenu = $("#button--drop-menu"),
@@ -5,7 +10,8 @@ var btnDropMenu = $("#button--drop-menu"),
 	content = $("#content"),
 	backgroundGray = $(".background--gray").first(),
 	intention = $(".intention").first(),
-	actionList = $(".list-action");
+	actionList = $(".list-action"),
+	listAction = $("#menu-toggle>ul>li");
 
 // declare constant
 
@@ -18,6 +24,8 @@ const TRANSFROM_INTENTION = "intention--transform";
 
 
 $(function () {
+	getList();
+	addNote();
 	btnDropMenu.click(function(event) {
 		displayMenu();
 	});
@@ -26,12 +34,22 @@ $(function () {
 		notDisplayMeny();
 	});
 
-	actionList.click(function(event) {
+	listAction.on('click', function(event) {
+		let action = $(this).data('action');
+		switch(action) {
+			case "get-list":
+			break;
+			case "add-note":
+			break;
+		}
 	});
+	listAction.click(function(e) {
+		console.log(222)
+	})
 })
 
-function actionChangeColor(argument) {
-	$("#menu-toggle>ul>li").removeClass('active').filter(argument).toggleClass('active');
+window.actionChangeColor = (argument) => {
+	listAction.removeClass('active').filter(argument).toggleClass('active');
 	notDisplayMeny();
 }
 
