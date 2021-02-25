@@ -1,3 +1,10 @@
+const NOTE = {
+    // time:  new Date().toLocaleTimeString('vi-VN', { hour: "numeric",  minute: "numeric"}),
+    time:  "",
+    // date: new Date().toLocaleDateString('vi-VN'),
+    date: "",
+    content: ""
+}
 var state = {
     notes: [
         {
@@ -26,13 +33,16 @@ var state = {
             content: "Có một hẹn với A"
         }
     ],
-    note:  {},
+    note:  {...NOTE},
 }
 var getters = {};
 
 var mutations = {
     remove(state, index) {
         state.notes = state.notes.filter((item, i) => i !== index);
+    },
+    add(state) {
+        state.notes.unshift(state.note);
     }
 };
 

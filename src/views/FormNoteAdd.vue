@@ -6,20 +6,38 @@
           <form>
             <div class="form-group">
               <label for="timeForAppointment">Thời gian</label>
-              <input type="time" class="form-control" required>
+              <input type="time" class="form-control" required v-model="note.time">
             </div>
             <div class="form-group">
               <label for="dateForAppointment">Ngày hẹn</label>
-              <input type="date" class="form-control" required>
+              <input type="date" class="form-control" v-model="note.date" required>
             </div>
             <div class="form-group">
               <label for="contentForAppointment">Nội dung cuộc hẹn</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" required v-model="note.content">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <button type="button" class="btn btn-primary" @click="addNote">Submit</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 </template>
+<script>
+import {mapState, mapMutations} from "vuex";
+export default {
+  computed: mapState({
+    note: (state) => state.note.note
+  }),
+  methods: {
+    ...mapMutations({
+      add: "note/add"
+    }),
+    addNote(){
+      this.add();
+      alertify.success("Thêm thành công");
+    }
+  },
+}
+</script>

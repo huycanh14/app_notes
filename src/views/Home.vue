@@ -16,9 +16,9 @@
                 <div class="pb-5">
                   <i class="fas fa-2x fa-minus-circle" @click="deleteNote(index)"></i>
                 </div>
-                <div >
+                <!-- <div >
                   <i class="fas fa-2x fa-pencil-alt"></i>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
