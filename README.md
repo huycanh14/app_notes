@@ -1,2 +1,23 @@
-# app_notes
-Xây dựng các app note để luyện tập các ngôn ngữ lập trình khác nhau
+ ## Convert html to vue
+
+
+
+# note-app-html
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
