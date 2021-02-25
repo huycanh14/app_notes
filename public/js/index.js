@@ -1,5 +1,5 @@
 // Import module
-import getList from "./get-list.js" // cach 1
+// import getList from "./get-list.js" // cach 1
 import { removeNote } from "./get-list.js" // cach 1
 
 import { addNote } from "./add-note.js" // cach 2
@@ -40,7 +40,7 @@ $(function () {
 		let action = $(this).data('action');
 		switch(action) {
 			case "get-list":
-				getList();
+				// getList();
 				displayListNotes();
 			break;
 			case "add-note":
@@ -49,9 +49,9 @@ $(function () {
 	});
 })
 
-$( window ).on( "load", function() {
-    listNotes = getList();
-});
+// $( window ).on( "load", function() {
+//     listNotes = getList();
+// });
 
 window.actionChangeColor = (argument) => {
 	listAction.removeClass('active').filter(argument).toggleClass('active');
@@ -76,39 +76,39 @@ const notDisplayMeny = () => {
 
 
 const displayListNotes = () => {
-	let str = [];
-	listNotes.forEach((item, index) => {
-		let code = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
-		str +=
-			`<div class="col-3 pb-5">
-				<div class='content'>
-					<div class='card d-flex align-items-stretch'>
-						<div class='card-body' style="background-color: ${code}"> 
-							<h5 class='card-title'>${item.time}</h5>
-							<small><i>${item.date}</i></small>
-							<p class='card-text'>${item.content}</p>
-						</div> </div>
+	// let str = [];
+	// listNotes.forEach((item, index) => {
+	// 	let code = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
+	// 	str +=
+	// 		`<div class="col-3 pb-5">
+	// 			<div class='content'>
+	// 				<div class='card d-flex align-items-stretch'>
+	// 					<div class='card-body' style="background-color: ${code}"> 
+	// 						<h5 class='card-title'>${item.time}</h5>
+	// 						<small><i>${item.date}</i></small>
+	// 						<p class='card-text'>${item.content}</p>
+	// 					</div> </div>
 
-					<div class="delete-card">
-						<div class="pb-5">
-							<i class="fas fa-2x fa-minus-circle" onclick="deleteNote(${index})"></i>
-						</div>
-						<div >
-							<i class="fas fa-2x fa-pencil-alt"></i>
-						</div>
-					</div>
-				</div>
-			</div>`;
-	});
-	htmlListNotes.html(str);
+	// 				<div class="delete-card">
+	// 					<div class="pb-5">
+	// 						<i class="fas fa-2x fa-minus-circle" onclick="deleteNote(${index})"></i>
+	// 					</div>
+	// 					<div >
+	// 						<i class="fas fa-2x fa-pencil-alt"></i>
+	// 					</div>
+	// 				</div>
+	// 			</div>
+	// 		</div>`;
+	// });
+	// htmlListNotes.html(str);
 }
 
 window.deleteNote = (index) => {
-	alertify.confirm("Chắc chắn muốn xóa ghi chú này?", function (e) {
-	    if (e) {
-	        listNotes = removeNote(index);
-	        displayListNotes();
-	        alertify.success("Xóa thành công");
-	    }
-	});
+	// alertify.confirm("Chắc chắn muốn xóa ghi chú này?", function (e) {
+	//     if (e) {
+	//         listNotes = removeNote(index);
+	//         displayListNotes();
+	//         alertify.success("Xóa thành công");
+	//     }
+	// });
 }
