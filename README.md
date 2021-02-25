@@ -1,6 +1,6 @@
  ## Convert html to vue
 
-
+update lên firebase : npm run build && firebase deploy
 
 # note-app-html
 
