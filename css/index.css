@@ -78,15 +78,15 @@ html, body {
     transform-origin: 100% 0%;
     */
     perspective: 300em; }
-  #content .intention {
+  #content .intention, #content #form {
     width: 100%;
     height: 100%;
     transform-origin: 100% 0%;
     background-color: #41c84bc4; }
-    #content .intention.intention--transform {
+    #content .intention.intention--transform, #content #form.intention--transform {
       transform: rotateY(-10deg); }
 
-header {
+#app {
   height: 100%;
   transition: cubic-bezier(0.77, 0.07, 0.69, 0.39) 0.5s;
   box-sizing: border-box; }
